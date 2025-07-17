@@ -6,12 +6,39 @@ That being said, I was tasked with creating the script and later creating an aut
   - "incidents" which includes the keys "status", "created_at", "updated_at", and "started_at"
   - "updates" which includes the keys "created_at" and "body"
 
-The key "page" just presents the metadata for the page itself, which includes the keys listed with it. The most important keys to be acknowledged though, lie within the incidents key and also within the updates key (which is nested within incidents). 
+The key "page" just presents the metadata for the page itself, which includes the keys listed with it. The most important keys to be acknowledged though, lie within the incidents key and also within the updates key (which is nested within incidents).
+
 INCIDENTS:
   - "status" tells you what the current situation is, like "resolved" or "investigating".
   - "created_at" tells you the timestamp for when the incident was created.
   - "updated_at" tells you the timestamp when the issue was last updated
   - "started_at" tells you the timestamp for when the issue initially started
+
 UPDATES:
   - "created_at" tells you the timestamp for when the update was posted
   - "body" gives you the text body or the description of the update
+
+SAMPLE OUTPUT:
+{
+  "page": {
+    "id": "yh6f0r4529hb",
+    "name": "Cloudflare",
+    "url": "https://www.cloudflarestatus.com",
+    "time_zone": "Etc/UTC",
+    "updated_at": "2025-07-17T14:20:28.589Z"
+  },
+  "incidents": [
+    {
+      "status": "resolved",
+      "created_at": "2025-07-17T11:00:00.000Z",
+      "updated_at": "2025-07-17T13:29:20.710Z",
+      "started_at": "2025-07-17T13:29:20.646Z",
+      "updates": [
+        {
+          "created_at": "2025-07-17T13:29:20.702Z",
+          "body": "This has been mitigated and customers should not see any further impact.\n\nStarted at: 2025-07-17 11:52 UTC\nEnded at: 2025-07-17 12:57 UTC"
+        }
+      ]
+    }
+  ]
+}
