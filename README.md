@@ -6,13 +6,14 @@ Description:
 
 Key Details:
   - Checks for today's incidents using Cloudflare's /incidents.json endpoint.
+  - Timezone conversion to US Eastern Time for consistent timestamp display.
   - Alerts if any incident status is not marked as "resolved".
   - Provides direct access link to the Cloudflare status page.
   - Does NOT monitor scheduled maintenance due to API limitations.
   - Designed for operational monitoring and alerting use cases.
 
 Requirements:
-  - Python 3.x
+  - Python 3.11+ (for zoneinfo support)
   - 'requests' library (install via: pip install requests)
   - Internet access required to query Cloudflare API endpoints.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
