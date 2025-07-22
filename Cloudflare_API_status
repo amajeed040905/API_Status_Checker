@@ -22,6 +22,10 @@
 import requests
 from datetime import datetime, timezone
 import json
+import zoneinfo
+
+# Define Eastern Time timezone for consistent timestamp display
+ET_timezone = zoneinfo.ZoneInfo("US/Eastern")
 
 CF_status_URL = "https://www.cloudflarestatus.com/api/v2/incidents.json"
 CF_status_page_link = "https://www.cloudflarestatus.com/"
@@ -35,7 +39,7 @@ def get_summary():
 
         #return "page" (Metadata about the status page itself)
         page_info = data.get("page", {})
-        today = datetime.now(timezone.utc).date()
+        today = datetime.now(ET_timezone).date()
 
         incident_summaries = []
         alert_triggered = False   # Track if any problem detected    
