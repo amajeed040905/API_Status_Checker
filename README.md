@@ -45,7 +45,7 @@ ws-broker-service endpoints from this url: https://clients.amazonworkspaces.com/
 by sending a GET request to each /ping URL. The it prints the status message if any of the regions report unhealthy
 
 KEY DETAILS:
-  - Uses built-in packagaes in Python to avod any external dependancies
+  - Uses built-in packagaes in Python to avoid any external dependancies
   - Sends a GET request to each region's /ping URL
   - Parses the response body and looks for the keyword "healthy"
   - Prints the region name from the URL for clear reporting
