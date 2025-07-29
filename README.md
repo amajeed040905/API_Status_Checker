@@ -35,3 +35,20 @@ Requirements:
   - Python 3.11+ (for zoneinfo support).
   - Requests library (install via `pip install requests`).
   - Internet access required to query M365 API endpoints.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AWS Status Monitor Script
+Made by Ammar Majeed for CFSB on 7/29/25
+
+DESCRIPTION:
+  This python script was created to check the health of AWS Services on the East and West Coast. It checks the
+ws-broker-service endpoints from this url: https://clients.amazonworkspaces.com/Health.html across the regions 
+by sending a GET request to each /ping URL. The it prints the status message if any of the regions report unhealthy
+
+KEY DETAILS:
+  - Uses built-in packagaes in Python to avod any external dependancies
+  - Sends a GET request to each region's /ping URL
+  - Parses the response body and looks for the keyword "healthy"
+  - Prints the region name from the URL for clear reporting
+
+REQUIREMENTS:
+  - Python 3.7+
