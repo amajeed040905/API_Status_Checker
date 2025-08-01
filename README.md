@@ -2,7 +2,7 @@ Cloudflare Status Monitor Script
 Made by Ammar Majeed for CFSB on 7/14/25
 
 Description:
-  - This Python script monitors Cloudflare’s public incident API to check for unresolved incidents reported today. It outputs alerts if active issues are detected and prints incident details. A link to Cloudflare’s official status page is included in the output for direct access to full information.
+  This Python script monitors Cloudflare’s public incident API to check for unresolved incidents reported today. It outputs alerts if active issues are detected and prints incident details. A link to Cloudflare’s official status page is included in the output for direct access to full information.
 
 Key Details:
   - Checks for today's incidents using Cloudflare's /incidents.json endpoint.
@@ -52,3 +52,22 @@ KEY DETAILS:
 
 REQUIREMENTS:
   - Python 3.7+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Freshservice Status Monitor
+Made by Ammar Majeed for CFSB on 8/1/25
+
+DESCRIPTION:
+  This script checks the freshservice JSON endpoint for any incidents that occurred today. 
+It filters through the json endpoint to check for any incidents that have today's date 
+and convert their timezone to ETC from UTC for better readability. 
+
+KEY DETAILS:
+  - Automatically retrieves incidents from the dynamic Freshstatus API endpoint
+  - Filters through the incidents to only return incidents from the present day
+    and for relevant information
+  - Outputs any incidents and information found as a JSON
+  - Shows "No incidents found today" if Freshstatus did not experience issues
+
+REQUIREMENTS:
+  - Python 3.9+ (for zoneinfo)
+  - "requests" library (via 'pip install requests')
